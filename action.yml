@@ -1,0 +1,23 @@
+name: Create release
+author: Piotr Majkrzak
+branding:
+  icon: box
+  color: green
+inputs:
+  token:
+    required: true
+  name:
+    required: true
+  code:
+    required: true
+  body:
+    default: ""
+  prerelease:
+    default: false
+  recreate:
+    default: false
+  assets:
+    defailt: ""
+runs:
+  using: node12
+  main: action.js
