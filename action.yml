@@ -1,4 +1,6 @@
-name: Create release
+name: majkrzak/create-release
+description: |
+  Github Action for handling release creation
 author: Piotr Majkrzak
 branding:
   icon: box
