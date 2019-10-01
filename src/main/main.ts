@@ -10,6 +10,7 @@ const api = new GitHub(process.env.GITHUB_TOKEN!);
 const github = require('@actions/github');
 async function run() {
     try {
+        console.log('initializing config variables');
         const name = core.getInput('name');
         const body = core.getInput('body');
         const prerelease = core.getInput('prerelease') == 'true';
@@ -31,16 +32,18 @@ async function run() {
         }
 
         if (overwrite) {
+            console.log('Deleting previous release');
             await deleteInitialRelease(tag);
         }
+        console.log('Creating new release');
         const release = await createRelease(body, tag, prerelease, name);
 
-
+        console.log('Uploading assets (if any)');
         for (const artifact_path of artifact_paths) {
             const asset = getAsset(artifact_path);
             await uploadAsset(release.upload_url, asset);
         }
-        console.log(`uploaded release to ${release.html_url}`);
+        console.log(`Uploaded release to ${release.html_url}`);
     } catch (error) {
         console.error(error);
         core.setFailed(error.message);
