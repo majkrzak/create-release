@@ -3,7 +3,7 @@ description: |
   Github Action for Uploading Release Artifacts
 author: Andrew Kulpa
 branding:
-  icon: box
+  icon: package
   color: green
 inputs:
   tag:
@@ -21,7 +21,7 @@ inputs:
   artifact:
     default: ''
 env:
-  'GITHUB_TOKEN': 'Github Auth Token'
+  GITHUB_TOKEN: 'Github Auth Token'
 runs:
   using: node12
-  main: action.js
+  main: lib/main/main.js
