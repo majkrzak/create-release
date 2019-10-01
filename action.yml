@@ -1,25 +1,27 @@
-name: majkrzak/create-release
+name: Andrew-Kulpa/create-release
 description: |
-  Github Action for handling release creation
-author: Piotr Majkrzak
+  Github Action for Uploading Release Artifacts
+author: Andrew Kulpa
 branding:
   icon: box
   color: green
 inputs:
-  token:
+  tag:
     required: true
   name:
-    required: true
-  code:
-    required: true
+    default: ''
   body:
     default: ""
   prerelease:
     default: false
-  recreate:
+  overwrite:
     default: false
-  assets:
-    defailt: ""
+  artifacts:
+    default: ""
+  artifact:
+    default: ''
+env:
+  'GITHUB_TOKEN': 'Github Auth Token'
 runs:
   using: node12
   main: action.js
