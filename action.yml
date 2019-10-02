@@ -8,8 +8,9 @@ branding:
 inputs:
   tag: #There are two steps required to use this action:
   # - create an action inside your repo by creating a file .github/workflows/release.yml 
-  # That is where your action will be invoked.
+  # - That is where your action will be invoked.
   # The Second is to  make certain your binary artifacts are generated.
+  # -
 
     required: true
   name:
