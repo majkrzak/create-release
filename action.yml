@@ -13,7 +13,7 @@ inputs:
   # - You can do this by adding a project-specific .github/build script.
 
     required: true
-  name:
+  name: Uploading Artifacts
     default: ''
   body:
     default: ""
