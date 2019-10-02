@@ -13,9 +13,13 @@ inputs:
   # - You can do this by adding a project-specific .github/build script.
 
     required: true
-  name: Uploading Artifacts
+  name: #Uploading Artifacts
     default: ''
-  body:
+  body: # Action performs 2 steps:
+        # -Generate the artifacts
+        # -Upload the artifacts
+        # You can continue to work and add script 
+        #.github/build to your repository, and configure this action with a pattern of files to upload.
     default: ""
   prerelease:
     default: false
