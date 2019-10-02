@@ -21,7 +21,8 @@ inputs:
         # You can continue to work and add script 
         #.github/build to your repository, and configure this action with a pattern of files to upload.
     default: ""
-  prerelease:
+  prerelease: # Must pass at least one argument, to the file you would like to attach. 
+              #You must also include the GITHUB_TOKEN secret otherwise uploding will not work. 
     default: false
   overwrite:
     default: false
