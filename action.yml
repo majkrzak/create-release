@@ -24,12 +24,27 @@ inputs:
   prerelease: # Must pass at least one argument, to the file you would like to attach. 
               #You must also include the GITHUB_TOKEN secret otherwise uploding will not work. 
     default: false
-  overwrite:
+  overwrite: #Using goreleaser --skip-validate allows to have rolling releases and publish a new binary or docker container under the last tag version. However, when goreleaser attempts to publish the artefacts on Github, it throws this error:
+              #release failed after 49.31s error=POST https://uploads.github.com/repos/foo/bar/releases/96914
     default: false
-  artifacts:
+  artifacts: #This repository contains a simple GitHub Action implementation, which allows you to attach binaries to a new (github) release of your repository
+            
     default: ""
-  artifact:
-    default: ''
+  artifact: #In the top right corner of a workflow run, once the run is over, 
+            #if you used this action, there will be a Artifacts dropdown which you can download items from.
+            #steps:
+#- uses: actions/checkout@v1
+
+#- run: mkdir -p path/to/artifact
+
+#- run: echo hello > path/to/artifact/world.txt
+
+#- uses: actions/upload-artifact@master
+  #with:
+    #name: my-artifact
+    #path: path/to/artifact
+    
+default: ''
 env:
   GITHUB_TOKEN: 'Github Auth Token'
 runs:
