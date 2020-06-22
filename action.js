@@ -1,6 +1,6 @@
 require('child_process')
   .execSync(
-    'npm install @actions/core @actions/github',
+    'npm install @actions/core@1.2.4 @actions/github@2.2.0',
     { cwd: __dirname }
   );
 const fs = require('fs');
